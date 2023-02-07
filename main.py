@@ -1,15 +1,24 @@
 import time
 import platform
 
+def system():
+    print("empty function")
+
+def help_system():
+    time.sleep(0.5)
+    print("'system' is a command used to find information about the user's system.")
+    time.sleep(0.5)
+    print("Commands are prefixed with 'system'. Supported terms:")
+    print("'machine', 'version', 'platform', 'uname", 'processor')
+    print("This uses the python 'platform' module.")
+
+# This is the main function, defined after the others
 def new_command(input1):
     input1 = input(">> ")
-    if input1 == "help system":
-        time.sleep(0.5)
-        print("'system' is a command used to find information about the user's system.")
-        time.sleep(0.5)
-        print("Commands are prefixed with 'system'. Some terms to use are:")
-        print("'machine', 'version', 'platform', 'uname", 'processor')
-        print("This uses the python 'platform' module.")
+    if input1[0:6] == "system":
+        system()
+    elif input1 == "help system":
+        help_system()
     else:
         print("The term '" + input1 + "' is not recognized")
         time.sleep(1)
